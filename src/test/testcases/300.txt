@@ -1,0 +1,7 @@
+
+        Class Shape {
+            $sum(){
+                Val a: Int = 1;
+            }
+        }
+        
