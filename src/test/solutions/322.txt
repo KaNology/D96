@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Shape),[MethodDecl(Id(loop),Instance,[],Block([ConstDecl(Id(numOfShape),IntType,IntLit(0)),Block([Block([VarDecl(Id(Area),FloatType)]),Block([])])]))])])

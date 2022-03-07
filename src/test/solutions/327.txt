@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(A),[AttributeDecl(Instance,VarDecl(Id(a),ClassType(Id(Dog)),NewExpr(Id(Dog),[]))),AttributeDecl(Instance,VarDecl(Id(b),ClassType(Id(Cat)),NullLiteral())),AttributeDecl(Instance,VarDecl(Id(c),ClassType(Id(Owner)),NewExpr(Id(Person),[StringLit(Davis),IntLit(22),NullLiteral()])))])])

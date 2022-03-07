@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(A),[MethodDecl(Id(foo),Instance,[],Block([VarDecl(Id(person),ClassType(Id(Person)),BinaryOp(+,CallExpr(FieldAccess(Id(Person),Id(pet)),Id(getName),[IntLit(4),Id(Dog)]),CallExpr(FieldAccess(Id(Person),Id(house)),Id(getAddress),[])))]))])])

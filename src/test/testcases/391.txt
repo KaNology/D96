@@ -1,0 +1,14 @@
+Class Program {
+            main() {
+                Val a : Int;
+                Foreach (i In 1 .. 100 By 1)
+                {
+                    Clib.printf("enter the number:");
+                    Clib.scanf("%d", a);
+                    If ( a == 0 ) {
+                        Break;
+                    }
+                }
+                Return 0;
+            }
+        }

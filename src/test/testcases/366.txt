@@ -1,0 +1,10 @@
+Class Program {
+            aaa() {
+                Self.print(a);
+                {
+                    Self.doSth();
+                    Continue;
+                }
+                Return Self.Something();
+            }
+        }

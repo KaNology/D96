@@ -1,0 +1,26 @@
+
+        Class Shape {
+            getArea(area: Float){
+                Return area;
+            }
+
+            $getArea(area: Float){
+                Return area;
+            }
+
+            getName(){
+                Return Self.name;
+            }
+
+            $getName(){
+                Return Self.name;
+            }
+
+            displayInfo(){
+                Self.getArea(5.2);
+                Self.getName();
+                Shape::$getArea(6.2);
+                Shape::$getName();
+            }
+        }
+        

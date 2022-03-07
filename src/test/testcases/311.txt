@@ -1,0 +1,11 @@
+
+        Class Person {
+            update_info() {
+                age = 45;
+                Self.height = 175;
+                Person::$name = "Andy";
+                Self.isMarried = True;
+                limb[0][1] = Leg;
+            }
+        }
+        

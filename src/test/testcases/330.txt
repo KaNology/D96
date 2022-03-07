@@ -1,0 +1,7 @@
+
+        Class A {
+            foo(){
+                Var person : Person = Person.pet.getName(4, Dog) + Person.house.getAddress();
+            }
+        }
+        

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Program),[MethodDecl(Id(a),Instance,[],Block([Call(Id(Obj),Id(doMany),[]),Return(BinaryOp(||,BinaryOp(==,Id(a),Id(b)),BinaryOp(>,Id(a),Id(b))))]))])])

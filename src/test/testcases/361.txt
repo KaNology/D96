@@ -1,0 +1,6 @@
+Class Program {
+            Destructor() {
+                Obj.doMany();
+                Return Motor::$engihe[1][2][3];
+            }
+        }

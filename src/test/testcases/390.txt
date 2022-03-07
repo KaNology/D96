@@ -1,0 +1,7 @@
+Class Program {
+            main() {}
+            main(w, h: Int) {}
+        }
+        Class ABC {
+            main() {}
+        }

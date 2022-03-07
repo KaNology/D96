@@ -1,0 +1,6 @@
+Class Program {
+            a() {
+                Obj.doMany();
+                Return (a == b) || (a > b);
+            }
+        }

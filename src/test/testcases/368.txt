@@ -1,0 +1,10 @@
+Class Program {
+            a() {
+                Val a : Int = 10;
+                Val b : String = "Hello World";
+                Val c, d : Array[Float, 2] = Array(.e5, 1.0), Array(1e-1, 4.4);
+                Self.print(a);
+                Self.print(b +. Self.convertToString(a));
+                Self.print(c * d);
+            }
+        }

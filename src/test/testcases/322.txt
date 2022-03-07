@@ -1,0 +1,15 @@
+
+        Class Shape {
+            loop(){
+                Val numOfShape: Int = 0;
+                {
+                    {
+                        Var Area: Float;
+                    }
+                    {
+
+                    }
+                }
+            }
+        }
+        

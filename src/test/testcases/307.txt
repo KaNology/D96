@@ -1,0 +1,7 @@
+
+        Class Shape {
+            $getNumOfShape(size : Float; dotNum, lineNum : Int; type : Shape) {
+
+            }
+        }
+        

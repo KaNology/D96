@@ -1,0 +1,9 @@
+
+        Class Program{
+            main(a,b,c:Int){}
+            main(){}
+        }
+        Class AnotherProgram{
+            main(){}
+        }
+        

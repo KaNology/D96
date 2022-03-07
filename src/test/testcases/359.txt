@@ -1,0 +1,6 @@
+Class Program {
+            a() {
+                Obj.doMany();
+                Return New X(1, 12, 10 * 20);
+            }
+        }

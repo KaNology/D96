@@ -5,7 +5,12 @@ class ParserSuite(unittest.TestCase):
     def test_simple_program(self):
         """Simple program: int main() {} """
         input = """
-                Class main{}
+                Class A:B{
+            Val a, b, c:Int = 1, 2, 3;
+            Foo(){
+                
+            }
+        }
                 """
         expect = "successful"
         self.assertTrue(TestParser.test(input,expect,201))

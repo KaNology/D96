@@ -1,0 +1,6 @@
+Class Program {
+            a() {
+                Obj.doMany();
+                Return Motor::$engihe[1][2][3];
+            }
+        }

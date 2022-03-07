@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Program),[MethodDecl(Id(a),Instance,[],Block([Call(Id(Obj),Id(doMany),[]),Return(NewExpr(Id(X),[IntLit(1),IntLit(12),BinaryOp(*,IntLit(10),IntLit(20))]))]))])])

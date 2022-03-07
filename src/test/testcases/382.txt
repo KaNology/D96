@@ -1,0 +1,13 @@
+Class Program {
+            a() {
+                If (a == b) {
+                    Self.print("Hurray");
+                } Elseif (a > b) {
+                    Self.print("Greater");
+                } Elseif (a < b) {
+                    Self.print("Less");
+                } Else {
+                    Self.print("Oh no");
+                }
+            }    
+        }

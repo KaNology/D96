@@ -1,0 +1,7 @@
+
+        Class A:B{
+            foo(){
+                person = New Person("Anthony" +. "Davis" + 153).pet.getName();
+            }
+        }
+        

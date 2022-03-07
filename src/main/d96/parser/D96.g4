@@ -35,30 +35,30 @@ classBody: (attrDeclaration | methodDeclaration)*;
 
 // Attribute Declaration
 
-attrDeclaration locals [
-    int attr_counter = 1,
-    int exp_counter = 1
-]
-: (VAL | VAR) attrList COLON typeName 
-(
-    ASSIGN 
-    (
-        exp (
-            {$exp_counter <= $attr_counter}? (COMMA exp) {$exp_counter = $exp_counter + 1}
-        )* 
-        )
-)?
-SEMI;
+// attrDeclaration locals [
+//     int attr_counter = 1,
+//     int exp_counter = 1
+// ]
+// : (VAL | VAR) attrList COLON typeName 
+// (
+//     ASSIGN 
+//     (
+//         exp (
+//             {$exp_counter <= $attr_counter}? (COMMA exp) {$exp_counter = $exp_counter + 1}
+//         )* 
+//         )
+// )?
+// SEMI;
 
-// attrList: identifier (COMMA identifier {$attr_declaration::attr_counter = $attr_declaration::attr_counter + 1})*;
+// attrList: identifier (COMMA identifier {$attrDeclaration::attr_counter = $attrDeclaration::attr_counter + 1})*;
 
-// attrDeclaration: ((VAL | VAR) (attrWithAssign | attrWithoutAssign) SEMI);
+attrDeclaration: ((VAL | VAR) (attrWithAssign | attrWithoutAssign) SEMI);
 
-// attrWithAssign: identifier attrPair exp;
+attrWithAssign: identifier attrPair exp;
 
-// attrPair: COMMA identifier attrPair exp COMMA | COLON typeName ASSIGN;
+attrPair: COMMA identifier attrPair exp COMMA | COLON typeName ASSIGN;
 
-// attrWithoutAssign: attrList COLON typeName;
+attrWithoutAssign: attrList COLON typeName;
 
 attrList: identifier (COMMA identifier)*;
 
@@ -86,7 +86,7 @@ primitiveType: BOOLEAN | INT | FLOAT | STRING;
 
 // Array Type
 
-arrayType: ARRAY LS elementType COMMA INTLIT RS;
+arrayType: ARRAY LS elementType COMMA intLit RS;
 
 elementType: primitiveType | arrayType;
 
@@ -96,22 +96,22 @@ classType: ID;
 
 // Statements
 
-stmt: assignStmt | ifStmt | forInStmt | breakStmt | continueStmt | returnStmt | instanceCall | staticCall | blockStmt;
+stmt: assignStmt | ifStmt | forInStmt | breakStmt | continueStmt | returnStmt | instanceCall | staticCall | declarationStmt | blockStmt;
 
 // Variable and Constant Declaration Statement
 
 // // this make sure that the *exp* number doesn't EXCEED the *var* number
 
-declarationStmt locals [
-    int var_counter = 1,
-    int exp_counter = 1
-]
-: (VAL | VAR) varList COLON typeName 
-(
-    ASSIGN (exp (
-        {$exp_counter != $var_counter}? (COMMA exp{$exp_counter = $exp_counter + 1})
-        )*)
-)? SEMI;
+// declarationStmt locals [
+//     int var_counter = 1,
+//     int exp_counter = 1
+// ]
+// : (VAL | VAR) varList COLON typeName 
+// (
+//     ASSIGN (exp (
+//         {$exp_counter <= $var_counter}? (COMMA exp) {$exp_counter = $exp_counter + 1}
+//         )*)
+// )? SEMI;
 
 // varList: ID (COMMA ID {$declarationStmt::var_counter = $declarationStmt::var_counter + 1})*;
 
@@ -121,13 +121,13 @@ declarationStmt locals [
 
 // This satisfies both conditions
 
-// declarationStmt: ((VAL | VAR) (declarationWithAssign | declarationWithoutAssign) SEMI);
+declarationStmt: ((VAL | VAR) (declarationWithAssign | declarationWithoutAssign) SEMI);
 
-// declarationWithAssign: ID declarationPair exp;
+declarationWithAssign: ID declarationPair exp;
 
-// declarationPair: COMMA ID declarationPair exp COMMA | COLON typeName ASSIGN;
+declarationPair: COMMA ID declarationPair exp COMMA | COLON typeName ASSIGN;
 
-// declarationWithoutAssign: varList COLON typeName;
+declarationWithoutAssign: varList COLON typeName;
 
 varList: ID (COMMA ID)*;
 
@@ -139,7 +139,10 @@ assignLHS: indexOperation | scalar;
 
 scalar: exp DOT ID | ID DOUBLECOLON DOLLAR_ID | ID;
 
-indexOperation: ID (LS exp RS)+;
+// indexOperation: indexHead (LS exp RS)+;
+indexOperation: exp7;
+
+indexHead: exp;
 
 // If Statement
 
@@ -171,7 +174,7 @@ staticCall: ID DOUBLECOLON DOLLAR_ID LB expList? RB SEMI;
 
 // Block Statement
 
-blockStmt: LP (declarationStmt | stmt)* RP;
+blockStmt: LP stmt* RP;
 
 // Expressions
 
@@ -201,7 +204,7 @@ exp11: LB exp RB | operand;
 
 expList: exp (COMMA exp)*;
 
-operand: ID /* for class type and ID */ | ZERO | INTLIT | FLOATLIT | STRINGLIT | booleanLit | indexArray | SELF | NULL;
+operand: ID /* for class type and ID */ | ZERO | intLit | FLOATLIT | STRINGLIT | booleanLit | indexArray | SELF | NULL;
 
 // Indexed Array and Multi-dimensional Array
 
@@ -331,19 +334,31 @@ ZERO: '0' | '00' | '0'[xX]'0' | '0'[bB]'0';
 
 // Integers
 
-INTLIT: (DECINT | OCTINT | HEXINT | BIINT) {
+intLit: (DECINT | OCTINT | HEXINT | BIINT);
+
+DECINT: [1-9]('_'?[0-9])* {
 y = str(self.text)
 x = y.replace("_", "")
 self.text = x[0:]
 };
 
-fragment DECINT: [1-9]('_'?[0-9])*;
+OCTINT: '0'[1-7]('_'?[0-7])*{
+y = str(self.text)
+x = y.replace("_", "")
+self.text = x[0:]
+};
 
-fragment OCTINT: '0'[1-7]('_'?[0-7])*;
+HEXINT: '0'[xX][1-9A-F]('_'?[0-9A-F])*{
+y = str(self.text)
+x = y.replace("_", "")
+self.text = x[0:]
+};
 
-fragment HEXINT: '0'[xX][1-9A-F]('_'?[0-9A-F])*;
-
-fragment BIINT: '0'[bB][1]('_'?[0-1])*;
+BIINT: '0'[bB][1]('_'?[0-1])*{
+y = str(self.text)
+x = y.replace("_", "")
+self.text = x[0:]
+};
 
 // Float
 

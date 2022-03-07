@@ -1,0 +1,9 @@
+
+        Class Shape {
+            Val $numOfShape: Int = 0;
+
+            $getNumOfShape() {
+
+            }
+        }
+        

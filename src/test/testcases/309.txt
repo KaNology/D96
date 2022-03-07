@@ -1,0 +1,15 @@
+
+        Class Shape {
+            $getNumOfShape() {
+
+            }
+
+            Val dots : Array[Float, 4];
+
+            getArea() {
+
+            }
+
+            Var $dots : Array[Float, 4] = Array(1.2, 3.4, 5.6, 7.8);
+        }
+        

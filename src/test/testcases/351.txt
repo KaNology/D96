@@ -1,0 +1,18 @@
+
+        Class Program {
+            main(){
+                Foreach(index In 10 .. 100 By 1000){
+                    Out.printInt(arr[x]);
+                    If(index % 19 == 4){
+                        Break;
+                    }
+                    Elseif(index % 20 == 1){
+                        Continue;
+                    }
+                    Elseif(index % 9 == 2){
+                        Return index;
+                    }
+                }
+            }
+        }
+        

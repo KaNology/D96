@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Shape),[MethodDecl(Id($getNumOfShape),Static,[param(Id(size),FloatType),param(Id(dotNum),IntType),param(Id(lineNum),IntType),param(Id(type),ClassType(Id(Shape)))],Block([]))])])

@@ -1,0 +1,6 @@
+Class So : A {
+            Val a : Array[Array[Int, 5], 5];
+            main() {
+                c[i][j] = c[i][j] + a[i][k] * b[k][j];
+            }
+        }

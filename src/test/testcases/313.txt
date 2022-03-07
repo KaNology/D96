@@ -1,0 +1,12 @@
+
+        Class Person {
+            isMarried() {
+                If(a){
+                    age = 1;
+                }
+                Elseif(b){
+                    age = 2;
+                }
+            }
+        }
+        

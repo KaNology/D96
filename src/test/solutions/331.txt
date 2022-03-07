@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(A),Id(B),[MethodDecl(Id(foo),Instance,[],Block([AssignStmt(Id(person),CallExpr(FieldAccess(NewExpr(Id(Person),[BinaryOp(+.,StringLit(Anthony),BinaryOp(+,StringLit(Davis),IntLit(153)))]),Id(pet)),Id(getName),[]))]))])])

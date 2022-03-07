@@ -1,0 +1,12 @@
+Class Program {
+            a() {
+                Foreach (i In 0 .. 1000 By a) {
+                    If (i == 100) {
+                        Return New X();
+                    } Else {
+                        i = i + 1;
+                    }
+                }
+                Self.print(a.a.foo());
+            }
+        }

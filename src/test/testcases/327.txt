@@ -1,0 +1,7 @@
+
+        Class A {
+            Var a : Dog = New Dog();
+            Var b : Cat;
+            Var c : Owner = New Person("Davis", 22, Null);
+        }
+        

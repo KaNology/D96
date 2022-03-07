@@ -1,1 +1,1 @@
-Program(List(FuncDecl(Id(main),List(),IntType,Block(List(),List(CallExpr(Id(getIntLn),List()))))))
+Program([ClassDecl(Id(Dot),[]),ClassDecl(Id(Line),Id(Dot),[]),ClassDecl(Id(Shape),Id(Line),[])])
